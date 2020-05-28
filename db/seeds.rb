@@ -25,6 +25,6 @@ end
 
 
 # ruby email creation
-5.times do
-  Email.create(object: Faker::Book.title, body: Faker::Internet.email)
+6.times do
+  Email.create(object: Faker::Book.title, body: Faker::Internet.email(word_count: 100))
 end

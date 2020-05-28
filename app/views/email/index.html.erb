@@ -1,0 +1,43 @@
+<div class="container">
+  <button type="button" class="btn btn-white border-primary" style="margin-left:13px;"> 
+  <%= link_to 'Recevoir un email', emails_path, method: :post, remote: true%>
+  </button>
+  <div class="row">
+    <!-- List email-->
+    <div class="col-md-8">
+      <table class="table table-striped text-center" style="margin-left:13px;">
+        <thead class="thead-dark">
+        <tr class="text-left">
+          <th scope="col">Boite de réception</th>
+        </tr>
+        </thead>
+    <tbody class="text-left" id="email_list">
+        <% @emails.all.each do |email| %>
+        <%= render 'email', email: email %>
+        <% end %>
+    </tbody>
+      </table>
+    </div>
+
+    <!-- Email content -->
+    <div class="col-md-4">
+      <table class="table table-striped text-center">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Sélectionner</th>
+      </tr>
+      </thead>
+      <tbody >
+        <tr id="email-content">
+          <td scope="row">
+            <span></span>
+          <tbody>
+          
+          </tbody>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
